@@ -1,0 +1,125 @@
+/* =========================
+   NAVBAR BASE
+========================= */
+.navbar {
+    background: #0b2e22; /* fallback so it NEVER disappears */
+    background: var(--green, #0b2e22);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.navbar-container {
+    margin: 0 auto;
+    padding: 14px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* IMPORTANT: safe logo sizing */
+.logo img {
+    height: 38px;
+    width: auto;
+    display: block;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+    align-items: center;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 15px;
+    font-weight: 400;
+
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+
+    transition: 0.2s ease;
+}
+
+/* hover */
+.navbar-links a:hover {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+/* active */
+.navbar-links a.active {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+
+        background: #0b2e22; /* fallback again */
+        flex-direction: column;
+        padding: 18px 0;
+
+        display: none;
+        gap: 16px;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+}
