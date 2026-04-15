@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function Home() {
@@ -14,18 +15,25 @@ function Menu() {
   return <h1>Menu Page</h1>;
 }
 
+function Order() {
+  return <h1>Order Page</h1>;
+}
+
 export default function App() {
   return (
-    <div>
+    <div className="app-layout">
       <Navbar />
 
-      <div className="page">
+      <main className="page-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/order" element={<Order />} />
         </Routes>
-      </div>
+      </main>
+
+      <Footer />
     </div>
   );
 }

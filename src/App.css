@@ -1,5 +1,19 @@
-.page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 30px;
+html, body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+/* MAIN LAYOUT */
+.app-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTENT PUSHES FOOTER DOWN */
+.page-content {
+    flex: 1;
 }
